@@ -1,9 +1,40 @@
+<!DOCTYPE html>
 <HTML>
         <head>
             <title>Login Page</title> <!-- Title to my webpage -->
+        
+        <style>
+            .login-box
+            {   
+                width: 300px;
+                margin: 100px auto;
+                padding: 20px
+                border: 2px solid #333;
+                background-color: #f9f9f9;
+                text-align: center;
+            }
+
+            input
+            {
+                width: 90%;
+                padding: 10px;
+                margin: 10px 0;
+            }
+
+            button
+            {
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+
+        </style>
+
+
         </head>
 
     <body>
+        <!--div class connects to style sheet: login-box-->
+        <div class="login-box">
             <h2>Login Page</h2> <!-- main heading for my login page -->
 
             <form method="POST" action="/login"> <!-- creates a form for the user to login -->
@@ -17,8 +48,8 @@
                 <!-- Creates a button to complete login-->
                 <button type="submit">Login</button>
             </form>
-    
-    <script src="/static/script.js"></script>
+        </div>
+        <script src="/static/script.js"></script>
     
     </body>
 
