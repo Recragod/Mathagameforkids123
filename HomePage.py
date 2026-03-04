@@ -37,4 +37,4 @@ def login():
 
 #This makes sure that the program runs only when this file is executed directly
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8000)
