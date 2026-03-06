@@ -30,11 +30,11 @@ def login():
     #Check if the username and password entered is a match to whats saved
     if username == USERNAME and password == PASSWORD:
         #if the correct details are entered, show success message
-        return "Login successful"
+        return render_template("home.html")
     else:
         #if the incorrect details are entered, show invalid message
         return "Invalid username or password"
 
 #This makes sure that the program runs only when this file is executed directly
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    app.run(debug=True, port=4000)
