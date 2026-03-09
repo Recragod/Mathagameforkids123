@@ -2,21 +2,19 @@
 body
 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: blue;
+    background-color: rgb(255, 244, 203);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-
 }
 
 .menu-bar
 {
-    background-color: brown;
+    background-color: rgb(66, 219, 185);
     padding: 50px;
     display: flex;
-    justify-content: center;
 }
 
 .menu-bar a
@@ -29,5 +27,13 @@ body
 
 .menu-bar a:hover
 {
-    color: rgb(0, 255, 200);
+    color: rgb(155, 155, 155);
+}
+
+.signup-btn
+{
+    background-color: rgb(0, 180, 0);
+    color: rgb(140, 57, 57);
+    border: none;
+    margin-top: 10px;
 }
