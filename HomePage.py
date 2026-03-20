@@ -51,6 +51,12 @@ def home():
 #this shows the login.html page to the user
     return render_template("login.html")
 
+@app.route("/learn")
+def learn():
+    return render_template("learn.html")
+
+
+
 #This route runs when the login form is submitted
 #it only accepts POST requests - because the form uses POST in HTML
 @app.route("/login", methods=["POST"])

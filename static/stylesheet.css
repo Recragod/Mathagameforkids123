@@ -2,24 +2,33 @@
 body
 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(151, 151, 151);
+    background-color: #D2E0DB;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 15px;
 }
 
 .menu-bar
-{
-    background-color: rgb(66, 219, 185);
-    padding: 50px;
+{   
+    background-color: #83D3D6;
+    padding: 30px;
     display: flex;
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    justify-content: center; /* centers the links horizontally */
+    gap: 40px;               /* adds space between the two links */
+    box-sizing: border-box;  /* prevents width overflow from padding */
 }
 
 .menu-bar a
 {
-    color:rgb(125, 0, 0);
+    color:#12263A;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -36,9 +45,4 @@ body
     color: rgb(0, 0, 0);
     border: none;
     margin-top: 10px;
-}
-
-.suburu {
-    background-image: url(./img/suburu1.jpg);
-
 }
