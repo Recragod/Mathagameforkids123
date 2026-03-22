@@ -3,7 +3,7 @@
 #FLASK LOGIN AND SIGNUP APPLICAION (NO PASSWORD CHECK)
 #------------------------------------------------------------------------
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3  # Allows you to use the SQL commands on Python
 import os       # Module that creates a connection between your operating system & Python
 
@@ -11,6 +11,7 @@ import os       # Module that creates a connection between your operating system
 #------------------------------------------------------------------------
 
 app = Flask(__name__)
+app.secret_key = "math_masters_secret_123"  # signs and secures session cookies so no one can hack and bypass
 
 # DATABASE SETUP
 #------------------------------------------------------------------------
@@ -51,39 +52,50 @@ def home():
 #this shows the login.html page to the user
     return render_template("login.html")
 
+@app.route("/home")
+def homepage():
+    return render_template("home.html")
+
+@app.route("/practice")
+def practice():
+    return render_template("practice.html")
+
 @app.route("/learn")
 def learn():
     return render_template("learn.html")
 
+@app.route("/logout", methods=["GET", "POST"])
+def logout():
+    return redirect(url_for("login"))  # sends them back to the login page
 
 
 #This route runs when the login form is submitted
 #it only accepts POST requests - because the form uses POST in HTML
-@app.route("/login", methods=["POST"])
-
-#name of function called login to accept data the user types
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    #Get the username typed in the form on the login screen
-    username=request.form["username"]
-    #Get the password typed in the form on the login screen
-    password=request.form["password"]
+    # check if the user is submitting the form (POST) or just visiting the page (GET)
+    if request.method == "POST":
+        # get the username and password typed in the form
+        username = request.form["username"]
+        password = request.form["password"]
 
-    conn = sqlite3.connect(DB_NAME) # connecting to the database
-    cursor = conn.cursor() #creating a obj(var) called cursor
-    cursor.execute("SELECT * FROM users WHERE username=? AND password=?", (username, password)) #Selects ALL the username from the users table WHERE the username and password is equal to what the user has entered
-    user = cursor.fetchone()
-    conn.close()
+        # connect to the database and search for a matching user
+        conn = sqlite3.connect(DB_NAME)
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE username=? AND password=?", (username, password))
+        user = cursor.fetchone()
+        conn.close()
 
-    #Check if the username and password entered is a match to whats saved
-    if user:
-        #if the correct details are entered, show success message
-        return render_template("home.html")
+        # if a matching user was found, go to homepage
+        if user:
+            return render_template("home.html")
+        # otherwise tell them the details were wrong
+        else:
+            return "Invalid username or password"
     
-    if username == USERNAME and password == PASSWORD:
-        return render_template("home.html")
-     #if the incorrect details are entered, show invalid message
     else:
-        return "Invalid username or password"
+        # GET request - just show the login page
+        return render_template("login.html")
     
 @app.route("/success")
 def success():

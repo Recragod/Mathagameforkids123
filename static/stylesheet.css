@@ -3,32 +3,31 @@ body
 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #D2E0DB;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    padding: 15px;
+    padding: 0px;
 }
 
 .menu-bar
 {   
-    background-color: #83D3D6;
-    padding: 30px;
+    background-color: #262a49;
+    padding: 15px;
     display: flex;
-    position: absolute;
+    position: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     top: 0%;
     left: 0%;
     width: 100%;
-    justify-content: center; /* centers the links horizontally */
-    gap: 40px;               /* adds space between the two links */
+    align-items: center;
+    justify-content: space-between; /* centers the links horizontally */
     box-sizing: border-box;  /* prevents width overflow from padding */
 }
 
 .menu-bar a
 {
-    color:#12263A;
+    color:#ffffff;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -36,7 +35,7 @@ body
 
 .menu-bar a:hover
 {
-    color: rgb(155, 155, 155);
+    color: rgb(174, 174, 174);
 }
 
 .signup-btn
@@ -45,4 +44,72 @@ body
     color: rgb(0, 0, 0);
     border: none;
     margin-top: 10px;
+}
+
+
+.hero {  /* full width dark hero banner */
+    background: linear-gradient(135deg, #1a3a4a 0%, #0d2233 60%, #1a4a3a 100%);
+    width: 100%;
+    margin-top: 84px;
+    padding: 80px 80px;
+    text-align: left;        /* align text to the left */
+    box-sizing: border-box;
+    display: flex;           /* puts text on left, image on right */
+    align-items: center;
+    justify-content: space-between;
+    min-height: 400px;       /* makes the banner taller */
+}
+
+.hero-text {
+    max-width: 55%;
+}
+
+.hero-logo {  /* logo image inside hero */
+    width: 280px;
+    border-radius: 12px;
+}
+
+.hero-title {  /* big title text */
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+}
+
+.hero-description {   /* description text */
+    color: rgb(200, 200, 200);
+    font-size: 18px;
+    margin: 0 0 30px 0;
+}
+
+.hero-btn { /* get started button */
+    background-color: rgb(66, 219, 185);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px 35px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.hero-btn:hover { /* button hover effect */
+    background-color: rgb(45, 180, 150);
+}
+
+.nav-logo {
+    width: 50px;             
+    height: 50px;
+    object-fit: cover;       /* stops it stretching */
+    border-radius: 8px;
+    margin-left: 15px; 
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    position: absolute;     
+    left: 50%;              
+    transform: translateX(-50%);  /* shifts it back by half its own width */
 }

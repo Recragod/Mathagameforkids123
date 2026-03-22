@@ -11,7 +11,7 @@ cursor = conn.cursor()
 
 #Create a table called "users"
 cursor.execute("""
-CREATE TABLE IF NOT EXIST users (
+CREATE TABLE IF NOT EXISTS users (
 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT NOT NULL,
