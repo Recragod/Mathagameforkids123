@@ -21,8 +21,8 @@ body
     left: 0%;
     width: 100%;
     align-items: center;
-    justify-content: space-between; /* centers the links horizontally */
-    box-sizing: border-box;  /* prevents width overflow from padding */
+    justify-content: space-between; /* this centers the links horizontally */
+    box-sizing: border-box;  /* this prevents width overflow from padding */
 }
 
 .menu-bar a
@@ -47,42 +47,42 @@ body
 }
 
 
-.hero {  /* full width dark hero banner */
+.herobanner { 
     background: linear-gradient(135deg, #1a3a4a 0%, #0d2233 60%, #1a4a3a 100%);
     width: 100%;
     margin-top: 84px;
     padding: 80px 80px;
-    text-align: left;        /* align text to the left */
+    text-align: left;        
     box-sizing: border-box;
-    display: flex;           /* puts text on left, image on right */
+    display: flex;           /* puts text on left, and the hero image on right */
     align-items: center;
     justify-content: space-between;
-    min-height: 400px;       /* makes the banner taller */
+    min-height: 400px;       /* makes the hero banner taller */
 }
 
-.hero-text {
+.bannertextbox {
     max-width: 55%;
 }
 
-.hero-logo {  /* logo image inside hero */
+.bannerimage {  /* logo image inside hero banner*/
     width: 280px;
     border-radius: 12px;
 }
 
-.hero-title {  /* big title text */
+.bannertitle {  /* big title text on the hero banner*/
     color: rgb(255, 255, 255);
     font-size: 36px;
     font-weight: 500;
     margin: 0 0 15px 0;
 }
 
-.hero-description {   /* description text */
+.bannerdescription {   /* description text on the hero banner */
     color: rgb(200, 200, 200);
     font-size: 18px;
     margin: 0 0 30px 0;
 }
 
-.hero-btn { /* get started button */
+.Getstartedbutton { /* get started button on the hero banner */
     background-color: rgb(66, 219, 185);
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -93,19 +93,19 @@ body
     display: inline-block;
 }
 
-.hero-btn:hover { /* button hover effect */
+.Getstartedbutton:hover { /*effect when hovering above the button*/
     background-color: rgb(45, 180, 150);
 }
 
-.nav-logo {
+.navbarlogo {
     width: 50px;             
     height: 50px;
-    object-fit: cover;       /* stops it stretching */
+    object-fit: cover;     
     border-radius: 8px;
     margin-left: 15px; 
 }
 
-.nav-links {
+.navbarlinks {
     display: flex;
     gap: 40px;
     align-items: center;
