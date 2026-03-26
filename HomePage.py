@@ -86,15 +86,11 @@ def learn():
 def logout():
     return redirect(url_for("login"))  # sends them back to the login page
 
-@app.route("/medium")
-def practice_medium():
-    return render_template("medium.html")
-
-@app.route("/hard")
+@app.route("/practice/hard")
 def practice_hard():
     return render_template("hard.html")
 
-@app.route("/timeattack")
+@app.route("/practice/timeattack")
 def practice_timeattack():
     return render_template("timeattack.html")
 
@@ -180,6 +176,20 @@ def generate_easy_question():
     answer = eval(question)
     return question, answer
 
+def generate_medium_question():
+    mediumnum1 = random.randint(1, 99)   # generates a random number from 1 to 99
+    mediumnum2 = random.randint(1, 99)   # generates a random number from 1 to 99
+    mediumoperation = random.choice(["+", "-", "/", "*"])   # randomly picks multiplication or division
+
+    # this code makes sure division gives whole numbers
+    if mediumoperation == "/":
+        mediumnum2 = random.randint(1, 9)
+        mediumnum1 = mediumnum2 * random.randint(1, 9)
+
+    question = f"{mediumnum1} {mediumoperation} {mediumnum2}"
+    answer = int(eval(question))
+    return question, answer
+
 @app.route("/practice/easy", methods=["GET", "POST"])
 def practice_easy():
     # reset game when user first visits the page
@@ -227,6 +237,59 @@ def practice_easy():
         session["easy_answer"] = answer
 
         return render_template("easy.html",
+            question=question,
+            question_number=question_number,
+            score=score,
+            feedback=feedback,
+            feedback_type=feedback_type)
+    
+@app.route("/practice/medium", methods=["GET", "POST"])
+def practice_medium():
+    # reset game when user first visits the page
+    if request.method == "GET":
+        session["medium_score"] = 0
+        session["medium_question_number"] = 1
+        question, answer = generate_medium_question()
+        session["medium_answer"] = answer
+        return render_template("medium.html",
+            question=question,
+            question_number=1,
+            score=0,
+            feedback=None)
+
+    # handle answer when user submits
+    if request.method == "POST":
+        user_answer = int(request.form["answer"])
+        correct_answer = session.get("medium_answer")
+        score = session.get("medium_score", 0)
+        question_number = session.get("medium_question_number", 1)
+
+        # check if answer is correct and update score
+        if user_answer == correct_answer:
+            score += 1
+            feedback = "Correct!"
+            feedback_type = "correct"
+        else:
+            feedback = "Incorrect!"
+            feedback_type = "incorrect"
+
+        session["medium_score"] = score
+        question_number += 1
+        session["medium_question_number"] = question_number
+
+        # if all 10 questions are done, show game over screen
+        if question_number > 15:
+            return render_template("medium.html",
+                question=None,
+                question_number=15,
+                score=score,
+                feedback=None)
+
+        # generate next question
+        question, medanswer = generate_medium_question()
+        session["medium_answer"] = medanswer
+
+        return render_template("medium.html",
             question=question,
             question_number=question_number,
             score=score,

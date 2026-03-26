@@ -16,5 +16,52 @@
             <a href="/logout">Log Out</a>
         </div>
     </div>
+
+    <div class="gamepage">
+        <a href="/practice" class="practice-back-button">← Back to Practice</a>
+
+         {% if question == None %}
+            <!-- game over screen -->
+            <div class="gamecontent">
+                <h2 class="gamemode">Medium Mode</h2>
+                <h1>Game Over!</h1>
+                <p class="score">Final Score: {{ score }} / 15</p>
+                <a href="/practice/medium" class="submit-btn">Play Again</a>
+            </div>
+
+        {% else %}
+            <!-- game in progress -->
+            <div class="gamecontent">
+                 <h2 class="gamemode">Medium Mode</h2>
+                <p class="game-progress">Question {{ question_number }} out of 15</p>
+
+                <h1 class="questions">{{ question }}</h1>
+
+                {% if feedback %}
+                    <p class="result {{ feedback_type }}">{{ feedback }}</p>
+                {% endif %}
+
+                <form method="POST" action="/practice/medium">
+                    <input class="gameinput" type="number" name="answer" placeholder="Your answer" required autofocus>
+                    <br><br>
+                    <button class="submit-btn" type="submit">Submit</button>
+                </form>
+
+                <p class="score">Score: {{ score }} / 15</p>
+            </div>
+        {% endif %}
+
+        </div>
+    </div>
+
+    <footer class="footer">
+     <p>2026 Math Learning game | Made by Joe Shikagishi</p>
+        <div class="footerlinks">
+            <a href="/home">Home</a>
+            <a href="/learn">Learning Math</a>
+            <a href="/practice">Practice</a>
+        </div>
+    </footer>
+
 </body>
 </html>
