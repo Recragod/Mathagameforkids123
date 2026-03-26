@@ -58,6 +58,12 @@ body {
     color:rgb(0, 0, 0);
 }
 
+.error-message {
+    color:rgb(209, 0, 0);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
 .menu-bar {   
     background-color: #262a49;
     padding: 15px;
