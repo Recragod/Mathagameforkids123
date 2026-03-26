@@ -79,14 +79,14 @@ body {
     z-index: 100;   /*ensure that the navbar is above everything */
 }
 
-.menu-bar a {
+.menu-bar .navbarlinks a {
     color:#ffffff;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
 }
 
-.menu-bar a:hover {
+.menu-bar .navbarlinks a:hover {
     color: rgb(174, 174, 174);
 }
 
@@ -364,3 +364,74 @@ body {
 .medium     { background-color: #b48924; }
 .hard       { background-color: #922e2e; }
 .timeattack { background-color: #214a88; }
+
+.gamepage {
+    padding: 40px;
+    padding-top: 110px;
+    flex: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.gamecontent {
+    background-color: #262a49;
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.gamecontent h1{
+    color: white;
+}
+
+.gamemode {
+    color: white;
+}
+
+.game-progress {
+    color: white;
+}
+
+.score {
+    color: white;
+}
+
+.questions {
+    color: white;
+}
+
+.result {
+    color: white;
+}
+
+.submit-btn {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 7px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: white;
+    text-decoration: none;
+    color: #000;
+}
+
+.gameinput {
+    padding:10px;
+    border-radius: 8px;
+}
+
+.practice-back-button {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: #262a49;
+    margin-bottom: 25px;
+}
+
+.practice-back-button:hover {
+    color: #42DBB9
+}

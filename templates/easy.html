@@ -18,22 +18,21 @@
     </div>
 
     <div class="gamepage">
-        <a href="/practice" class="learning-back-button>">← Back to Practice</a>
+        <a href="/practice" class="practice-back-button">← Back to Practice</a>
 
          {% if question == None %}
             <!-- game over screen -->
             <div class="gamecontent">
-                <h2 class="gamemode">⭐ Easy Mode</h2>
+                <h2 class="gamemode">Easy Mode</h2>
                 <h1>Game Over!</h1>
                 <p class="score">Final Score: {{ score }} / 10</p>
                 <a href="/practice/easy" class="submit-btn">Play Again</a>
-                <a href="/practice" class="learning-back-button">← Back to Practice</a>
             </div>
 
         {% else %}
             <!-- game in progress -->
             <div class="gamecontent">
-                <h2 class="gamemode">Easy Mode</h2>
+                 <h2 class="gamemode">Easy Mode</h2>
                 <p class="game-progress">Question {{ question_number }} out of 10</p>
 
                 <h1 class="questions">{{ question }}</h1>
