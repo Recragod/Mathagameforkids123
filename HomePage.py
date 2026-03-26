@@ -71,7 +71,8 @@ def multiplication():
 
 @app.route("/home")
 def homepage():
-    return render_template("home.html")
+    username = session.get("username", "Fellow Mathmathician")
+    return render_template("home.html", username=username)
 
 @app.route("/practice")
 def practice():
@@ -105,14 +106,15 @@ def login():
 
         # if a matching user was found, go to homepage
         if user:
-            return render_template("home.html")
+            session["username"] = username #defines the username variable
+            return redirect(url_for("homepage"))
         # otherwise tell them the details were wrong
         else:
-            return "Invalid username or password"
+            return render_template("login.html", error="Invalid username or password")
     
     else:
         # GET request - just show the login page
-        return render_template("login.html")
+        return render_template("login.html", error=None)
     
 @app.route("/success")
 def success():

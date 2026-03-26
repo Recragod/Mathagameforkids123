@@ -4,42 +4,6 @@
             <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
 
             <title>Math Masters | Login</title> <!-- Title to my webpage -->
-        
-        <style>
-            .login-box
-            {   
-                width:300px;
-                margin:100px auto;
-                padding:20px;
-                border:2px solid #333;
-                background-color: #f9f9f9;
-                text-align:center;
-            }
-
-            input
-            {
-                width: 90%;
-                padding: 10px;
-                margin: 10px 0;
-            }
-
-            button
-            {
-                padding: 10px 20px;
-                cursor: pointer;
-            }
-
-            
-            h1{
-                 font-family: 'Times New Roman', Times, serif;
-            }
-
-            body {
-             background-image: url('suburu1.jpg');
-            }
-        </style>
-
-
         </head>
 
     <body>
@@ -50,13 +14,17 @@
             <form method="POST" action="/login"> <!-- creates a form for the user to login -->
 
                 <!-- Creates text field for user to type in their username -->
-                <input type="text" name="username" placeholder="Username" required>
+                <input class="login-input" type="text" name="username" placeholder="Username" required>
                 <br><br>
                 <!-- Creates text field for user to type in their password -->
-                <input type="password" name="password" placeholder="Password" required>
+                <input class="login-input" type="password" name="password" placeholder="Password" required>
                 <br><br>
+                <!--sends an error message if login fails-->
+                {% if error %}
+                    <p class="error-message">{{ error }}</p>
+                {% endif %}
                 <!-- Creates a button to complete login-->
-                <button type="submit">Login</button>
+                <button class="login-button" type="submit">Login</button>
             </form>
             <br>
             <!--Sign Up button opens a popup-->

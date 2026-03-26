@@ -1,6 +1,5 @@
 
-body
-{
+body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #D2E0DB;
     justify-content: center;
@@ -12,8 +11,54 @@ body
     min-height: 100vh;
 }
 
-.menu-bar
-{   
+ .login-box {   
+    width:300px;
+    margin:100px auto;
+    padding:20px;
+    border:2px solid #333;
+    background-color: #f9f9f9c2;
+    text-align:center;
+    border-radius: 20px;
+}
+
+.login-input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.login-button {
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: #314889;
+    color: rgba(255, 255, 255, 0.856);
+    transition: background-color 0.2s;    
+}
+
+.login-button:hover {
+    background-color: rgba(255, 255, 255, 0.856);
+    color: #314889;
+}
+
+.signup-btn {
+    background-color: rgb(0, 179, 0);
+    color: rgb(0, 0, 0);
+    border: none;
+    margin-top: 5px;
+    padding: 10px 24px;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: background-color 0.2s;
+}
+
+.signup-btn:hover {
+    background-color:  rgba(0, 179, 0, 0.473);
+    color:rgb(0, 0, 0);
+}
+
+.menu-bar {   
     background-color: #262a49;
     padding: 15px;
     display: flex;
@@ -27,27 +72,16 @@ body
     box-sizing: border-box;  /* this prevents width overflow from padding */
 }
 
-.menu-bar a
-{
+.menu-bar a {
     color:#ffffff;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
 }
 
-.menu-bar a:hover
-{
+.menu-bar a:hover {
     color: rgb(174, 174, 174);
 }
-
-.signup-btn
-{
-    background-color: rgb(0, 179, 0);
-    color: rgb(0, 0, 0);
-    border: none;
-    margin-top: 10px;
-}
-
 
 .herobanner { 
     background: linear-gradient(135deg, #1a3a4a 0%, #0d2233 60%, #1a4a3a 100%);
@@ -71,9 +105,16 @@ body
     border-radius: 12px;
 }
 
+.bannerwelcometitle {
+    color: rgb(255, 255, 255);
+    font-size: 38px;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+}
+
 .bannertitle {  /* big title text on the hero banner*/
     color: rgb(255, 255, 255);
-    font-size: 36px;
+    font-size: 23px;
     font-weight: 500;
     margin: 0 0 15px 0;
 }
