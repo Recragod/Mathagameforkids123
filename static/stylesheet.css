@@ -76,6 +76,7 @@ body {
     align-items: center;
     justify-content: space-between; /* this centers the links horizontally */
     box-sizing: border-box;  /* this prevents width overflow from padding */
+    z-index: 100;   /*ensure that the navbar is above everything */
 }
 
 .menu-bar a {
@@ -319,17 +320,22 @@ body {
     grid-template-columns: repeat (2, 1fr);
     margin: 0 auto;
     max-width: 700px;
-    gap: 30px;
+    gap: 40px;
 }
 
 .practicecard {
     border-radius: 16px;
     text-decoration: none;
-    padding: 30px 20px;
+    padding: 20px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+}
+
+.practicecard:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
 }
 
 .practicecard h2 {
@@ -349,3 +355,12 @@ body {
     font-size: 36px;
     color: #000;
 }
+
+.practicecard.timeattack {
+    margin-bottom: 70px;
+}
+
+.easy       { background-color: #417549; }
+.medium     { background-color: #b48924; }
+.hard       { background-color: #922e2e; }
+.timeattack { background-color: #214a88; }

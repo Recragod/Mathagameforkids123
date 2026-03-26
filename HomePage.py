@@ -86,6 +86,17 @@ def learn():
 def logout():
     return redirect(url_for("login"))  # sends them back to the login page
 
+@app.route("/medium")
+def practice_medium():
+    return render_template("medium.html")
+
+@app.route("/hard")
+def practice_hard():
+    return render_template("hard.html")
+
+@app.route("/timeattack")
+def practice_timeattack():
+    return render_template("timeattack.html")
 
 #This route runs when the login form is submitted
 #it only accepts POST requests - because the form uses POST in HTML
@@ -110,7 +121,7 @@ def login():
             return redirect(url_for("homepage"))
         # otherwise tell them the details were wrong
         else:
-            return render_template("login.html", error="Invalid username or password")
+            return render_template("login.html", error="Invalid username or password")  #shows Invalid username or password if and error is sent from the login page
     
     else:
         # GET request - just show the login page
@@ -154,6 +165,73 @@ def signup():
     </body>
     </html>
     """
+import random
+
+def generate_easy_question():
+    num1 = random.randint(1, 99)   # generates a random number from 1 to 99
+    num2 = random.randint(1, 99)   # generates a random number from 1 to 99
+    operation = random.choice(["+", "-"])   # randomly picks addition or subtraction
+
+    # makes sure subtraction never goes negative
+    if operation == "-" and num2 > num1:
+        num1, num2 = num2, num1
+
+    question = f"{num1} {operation} {num2}"
+    answer = eval(question)
+    return question, answer
+
+@app.route("/practice/easy", methods=["GET", "POST"])
+def practice_easy():
+    # reset game when user first visits the page
+    if request.method == "GET":
+        session["easy_score"] = 0
+        session["easy_question_number"] = 1
+        question, answer = generate_easy_question()
+        session["easy_answer"] = answer
+        return render_template("easy.html",
+            question=question,
+            question_number=1,
+            score=0,
+            feedback=None)
+
+    # handle answer when user submits
+    if request.method == "POST":
+        user_answer = int(request.form["answer"])
+        correct_answer = session.get("easy_answer")
+        score = session.get("easy_score", 0)
+        question_number = session.get("easy_question_number", 1)
+
+        # check if answer is correct and update score
+        if user_answer == correct_answer:
+            score += 1
+            feedback = "Correct!"
+            feedback_type = "correct"
+        else:
+            feedback = "Incorrect!"
+            feedback_type = "incorrect"
+
+        session["easy_score"] = score
+        question_number += 1
+        session["easy_question_number"] = question_number
+
+        # if all 10 questions are done, show game over screen
+        if question_number > 10:
+            return render_template("easy.html",
+                question=None,
+                question_number=10,
+                score=score,
+                feedback=None)
+
+        # generate next question
+        question, answer = generate_easy_question()
+        session["easy_answer"] = answer
+
+        return render_template("easy.html",
+            question=question,
+            question_number=question_number,
+            score=score,
+            feedback=feedback,
+            feedback_type=feedback_type)
 
 #This makes sure that the program runs only when this file is executed directly
 if __name__ == "__main__":
