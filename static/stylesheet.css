@@ -113,3 +113,9 @@ body
     left: 50%;              
     transform: translateX(-50%);  /* shifts it back by half its own width */
 }
+
+.learn-page {
+    margin-top: 100px;
+    text-align: center;
+    padding: 40px;
+}
