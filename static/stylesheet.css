@@ -147,6 +147,7 @@ body
     border-radius: 16px;
     padding: 10px;
     transition: background-color 0.2s;
+    text-decoration: none;
 }
 
 .learnbutton:hover {
@@ -157,3 +158,37 @@ body
 .learn-icon {
     font-size: 34px;
 }
+
+.learningcontent {
+    margin-top: 110px;
+    padding: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.learning-back-button {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: #262a49;
+    margin-bottom: 25px;
+}
+
+.learningcontent-card {
+
+}
+
+.learningcontnt-title {
+
+}
+
+.learningcontent-description {
+
+}
+
+.learning-example {
+
+}
+

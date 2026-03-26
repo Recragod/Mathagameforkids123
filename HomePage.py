@@ -52,6 +52,23 @@ def home():
 #this shows the login.html page to the user
     return render_template("login.html")
 
+
+@app.route("/addition")
+def addition():
+    return render_template("addition.html")
+
+@app.route("/subtraction")
+def subtraction():
+    return render_template("subtraction.html")
+
+@app.route("/division")
+def division():
+    return render_template("division.html")
+
+@app.route("/multiplication")
+def multiplication():
+    return render_template("multiplication.html")
+
 @app.route("/home")
 def homepage():
     return render_template("home.html")
