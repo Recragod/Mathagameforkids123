@@ -293,3 +293,59 @@ body {
 .footerlinks a:hover {
     color: white;
 }
+
+.practice-page {
+    flex:1;
+    padding: 40px;
+    padding-top: 110px;
+    text-align: center;
+}
+
+.practicetitle {
+    font-size: 36px;
+    color: #12263A;
+    margin-bottom: 10px;
+}
+
+.practicesubtitle {
+    font-size:18px;
+    color: #2c203b;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.practicecontent {
+    display: grid;
+    grid-template-columns: repeat (2, 1fr);
+    margin: 0 auto;
+    max-width: 700px;
+    gap: 30px;
+}
+
+.practicecard {
+    border-radius: 16px;
+    text-decoration: none;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.practicecard h2 {
+    margin: 0;
+    font-size: 24px;
+    text-decoration: none;
+    color: #000;
+}
+
+.practicecard p {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.practice-icon {
+    font-size: 36px;
+    color: #000;
+}
