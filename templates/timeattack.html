@@ -16,5 +16,71 @@
             <a href="/logout">Log Out</a>
         </div>
     </div>
+
+    <div class="gamepage">
+        <a href="/practice" class="practice-back-button">← Back to Practice</a>
+        
+         {% if question == None %}
+            <!-- game over screen -->
+            <div class="gamecontent">
+                <h2 class="gamemode">Timeattack Mode</h2>
+                <h1>Game Over!</h1>
+                <p class="score">Final Score: {{ score }} / 10</p>
+                <a href="/practice/easy" class="submit-btn">Play Again</a>
+            </div>
+
+        {% else %}
+            <!-- game in progress -->
+            <div class="gamecontent">
+                 <h2 class="gamemode">Timeattack Mode</h2>
+                <p class="game-progress">Question {{ question_number }}</p>
+
+                <div class="row">
+                    <span id="Timer" class="timer timerfront">60</span>
+                    <span class="seconds">Seconds</span>
+                </div>
+
+                <script>
+                    var count = 6000;
+                    var counter = setInterval(timer, 10);
+
+                    function timer() {
+                    if (count <= 0) {
+                        clearInterval(counter);
+                        return;
+                    }
+                    count--;
+                   
+                    document.getElementById("Timer").innerHTML = Math.floor(count / 100);
+                    }
+                </script>
+
+                <h1 class="questions">{{ question }}</h1>
+
+                {% if feedback %}
+                    <p class="result {{ feedback_type }}">{{ feedback }}</p>
+                {% endif %}
+
+                <form method="POST" action="/practice/timeattack">
+                    <input class="gameinput" type="number" name="answer" placeholder="Your answer" required autofocus>
+                    <br><br>
+                    <button class="submit-btn" type="submit">Submit</button>
+                </form>
+
+                <p class="score">Score: {{ score }}</p>
+            </div>
+        {% endif %}
+
+        </div>
+    </div>
+
+    <footer class="footer">
+     <p>2026 Math Learning game | Made by Joe Shikagishi</p>
+        <div class="footerlinks">
+            <a href="/home">Home</a>
+            <a href="/learn">Learning Math</a>
+            <a href="/practice">Practice</a>
+        </div>
+    </footer>
 </body>
 </html>

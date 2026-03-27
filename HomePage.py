@@ -86,10 +86,6 @@ def learn():
 def logout():
     return redirect(url_for("login"))  # sends them back to the login page
 
-@app.route("/practice/timeattack")
-def practice_timeattack():
-    return render_template("timeattack.html")
-
 #This route runs when the login form is submitted
 #it only accepts POST requests - because the form uses POST in HTML
 @app.route("/login", methods=["GET", "POST"])
@@ -175,7 +171,7 @@ def generate_easy_question():
 def generate_medium_question():
     mediumnum1 = random.randint(1, 99)   # generates a random number from 1 to 99
     mediumnum2 = random.randint(1, 99)   # generates a random number from 1 to 99
-    mediumoperation = random.choice(["+", "-", "/", "*"])   # randomly picks multiplication or division
+    mediumoperation = random.choice(["+", "-", "/", "*"])   # randomly picks the operation
 
     # this code makes sure division gives whole numbers
     if mediumoperation == "/":
@@ -189,7 +185,7 @@ def generate_medium_question():
 def generate_hard_question():
     hardnum1 = random.randint(100, 999)   # generates a random number from 100 to 999
     hardnum2 = random.randint(100, 999)   # generates a random number from 100 to 999
-    hardoperation = random.choice(["+", "-", "/", "*"])   # randomly picks multiplication or division
+    hardoperation = random.choice(["+", "-", "/", "*"])   # randomly picks the operation
 
     # this code makes sure division gives whole numbers
     if hardoperation == "/":
@@ -199,6 +195,21 @@ def generate_hard_question():
     question = f"{hardnum1} {hardoperation} {hardnum2}"
     answer = int(eval(question))
     return question, answer
+
+def generate_timeattack_question():
+    timeattacknum1 = random.randint(1, 9)   # generates a random number from 1 to 9
+    timeattacknum2 = random.randint(1, 9)   # generates a random number from 1 to 9
+    timeattackoperation = random.choice(["+", "-", "/", "*"])   # randomly picks the operation
+
+    # this code makes sure division gives whole numbers
+    if timeattackoperation == "/":
+        timeattacknum2 = random.randint(1, 9)
+        timeattacknum1 = timeattacknum2 * random.randint(1, 9)
+
+    question = f"{timeattacknum1} {timeattackoperation} {timeattacknum2}"
+    answer = int(eval(question))
+    return question, answer
+
 
 @app.route("/practice/easy", methods=["GET", "POST"])
 def practice_easy():
@@ -353,6 +364,59 @@ def practice_hard():
         session["hard_answer"] = hardanswer
 
         return render_template("hard.html",
+            question=question,
+            question_number=question_number,
+            score=score,
+            feedback=feedback,
+            feedback_type=feedback_type)
+    
+@app.route("/practice/timeattack", methods=["GET", "POST"])
+def practice_timeattack():
+    # reset game when user first visits the page
+    if request.method == "GET":
+        session["timeattack_score"] = 0
+        session["timeattack_question_number"] = 1
+        question, answer = generate_timeattack_question()
+        session["timeattack_answer"] = answer
+        return render_template("timeattack.html",
+            question=question,
+            question_number=1,
+            score=0,
+            feedback=None)
+
+    # handle answer when user submits
+    if request.method == "POST":
+        user_answer = int(request.form["answer"])
+        correct_answer = session.get("timeattack_answer")
+        score = session.get("timeattack_score", 0)
+        question_number = session.get("timeattack_question_number", 1)
+
+        # check if answer is correct and update score
+        if user_answer == correct_answer:
+            score += 1
+            feedback = "Correct!"
+            feedback_type = "correct"
+        else:
+            feedback = "Incorrect!"
+            feedback_type = "incorrect"
+
+        session["timeattack_score"] = score
+        question_number += 1
+        session["timeattack_question_number"] = question_number
+
+        # if all 20 questions are done, show game over screen
+        if question_number > 20:
+            return render_template("timeattack.html",
+                question=None,
+                question_number=20,
+                score=score,
+                feedback=None)
+
+        # generate next question
+        question, timeattackanswer = generate_timeattack_question()
+        session["timeattack_answer"] = timeattackanswer
+
+        return render_template("timeattack.html",
             question=question,
             question_number=question_number,
             score=score,
