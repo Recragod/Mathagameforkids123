@@ -1,6 +1,6 @@
 // This line writes the text "Login page loaded" to the browser's developer console.
 // It is mainly used for debugging to check that the JavaScript file is connected properly
-console.log ("Login page loaded");
+console.log("Login page loaded");
 
 //---------------------------------------------------------------
 //Function to open the signup page in a popup window

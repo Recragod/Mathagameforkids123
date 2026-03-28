@@ -317,7 +317,7 @@ body {
 
 .practicecontent {
     display: grid;
-    grid-template-columns: repeat (2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin: 0 auto;
     max-width: 700px;
     gap: 40px;
@@ -404,6 +404,10 @@ body {
 .result {
     color: white;
 }
+
+.correct { color: #42DBB9; }
+
+.incorrect {color: red}
 
 .submit-btn {
     padding-left: 15px;

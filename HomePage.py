@@ -84,8 +84,9 @@ def learn():
 
 @app.route("/logout", methods=["GET", "POST"])
 def logout():
+    session.clear()
     return redirect(url_for("login"))  # sends them back to the login page
-
+    
 #This route runs when the login form is submitted
 #it only accepts POST requests - because the form uses POST in HTML
 @app.route("/login", methods=["GET", "POST"])
@@ -208,7 +209,7 @@ def generate_timeattack_question():
 
     question = f"{timeattacknum1} {timeattackoperation} {timeattacknum2}"
     answer = int(eval(question))
-    return question, answer
+    return question, answer 
 
 
 @app.route("/practice/easy", methods=["GET", "POST"])
@@ -405,7 +406,7 @@ def practice_timeattack():
         session["timeattack_question_number"] = question_number
 
         # if all 20 questions are done, show game over screen
-        if question_number > 20:
+        if Timer == 0:
             return render_template("timeattack.html",
                 question=None,
                 question_number=20,
