@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- links the external CSS stylesheet to this page -->
         <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
         <title>Math Masters | Practice</title>
     </head>
     <body>
-        
+        <!-- fixed navbar at the top of the page -->
         <div class="menu-bar">
+            <!-- clicking the logo takes the user back to the homepage -->
             <a href="/home" class="menu-logo">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2MKA6HWT8Qk-hn5AzfdHMYnVDRCwlukys5Q&s" alt="Logo" class="navbarlogo">
             </a>
+            <!-- container for the nav links centered in the navbar -->
             <div class="navbarlinks">
                 <a href="/home">Home</a>
                 <a href="/learn">Learning Math</a>
@@ -17,31 +20,35 @@
                 <a href="/logout">Log Out</a>
             </div>
         </div>
-
+        <!-- page title and subtitle section -->
         <div class="practice-page">
             <h1 class="practicetitle">Practice Mode</h1>
             <p class="practicesubtitle">Choose a difficulty to get started</p>
         </div>
-
+        <!-- 2x2 grid containing the four practice mode cards -->
         <div class="practicecontent">
+            <!-- easy mode card -->
             <a href="/practice/easy" class="practicecard easy">
                 <span class="practice-icon">☆</span>
                 <h2>Easy</h2>
                 <p>Contains: Addition & Subtraction</p>
                 <p>10 questions - 2 digit numberss</p>
             </a>
+            <!-- medium mode card -->
             <a href="/practice/medium" class="practicecard medium">
                 <span class="practice-icon">☆ ☆</span>
                 <h2>Medium</h2>
                 <p>Contains: Addition, Subtraction, Multiplication, Division</p>
                 <p>15 questions - 2 digit numbers</p>
             </a>
+            <!-- hard mode card -->
             <a href="/practice/hard" class="practicecard hard">
                 <span class="practice-icon">☆ ☆ ☆</span>
                 <h2>Hard</h2>
                 <p>Contains: Addition, Subtraction, Multiplication, Division</p>
                 <p>20 questions - 3 digit numbers</p>
             </a>
+            <!-- time attack card -->
             <a href="/practice/timeattack" class="practicecard timeattack">
                 <span class="practice-icon">⏱</span>
                 <h2>Time Attack</h2>
@@ -49,9 +56,10 @@
                 <p>1 minute timer</p>
             </a>
         </div>
-            
+    <!-- footer with quick nav links -->
     <footer class="footer">
      <p>2026 Math Learning game | Made by Joe Shikagishi</p>
+        <!-- quick navigation links in the footer -->
         <div class="footerlinks">
             <a href="/home">Home</a>
             <a href="/learn">Learning Math</a>

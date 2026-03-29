@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- links the external CSS stylesheet to this page -->
         <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
         <title>Math Masters | Learn Division</title>
     </head>
 <body>  
+    <!-- fixed navigation bar that stays at the top of the page -->
     <div class="menu-bar">
+        <!-- clicking the logo takes the user back to the homepage -->
         <a href="/home" class="menu-logo">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2MKA6HWT8Qk-hn5AzfdHMYnVDRCwlukys5Q&s" alt="Logo" class="navbarlogo">
         </a>
+        <!-- container for the nav links centered in the navbar -->
         <div class="navbarlinks">
             <a href="/home">Home</a>
             <a href="/learn">Learning Math</a>
@@ -16,12 +20,14 @@
             <a href="/logout">Log Out</a>
         </div>
     </div>
-
+    <!-- main content area pushed below the fixed navbar -->
     <div class="learningcontent">
+            <!-- back button to return to the learning topic selection page -->
             <a href="/learn" class="learning-back-button">← Back to Learning</a>
-
+            <!-- card container holding the topic title, description and examples -->
             <div class="learningcontent-card">
                 <h1 class="learningcontent-title">Division (÷)</h1>
+                <!-- this paragraph explains what division is with a real life example -->
                 <p class="learningcontent-description">
                     Division in maths is the process of breaking a number up into equal parts, and finding out how many equal parts can be made. 
                     <br>
@@ -29,9 +35,10 @@
                     For example, you can have 6 cars in you garage. But your three bestfriends decided to steal all of it and share it equally among themselves. So each of them got 2 cars.
                     <br>
                     <br>
+                    <!-- bold text to highlight the mathematical expression -->
                     We can express this as: <strong>6 ÷ 3 = 2</strong>
                 </p>
-
+                <!-- box showing worked examples of division problems -->   
                 <div class="learning-example">
                     <h3>Example:</h3>
                     <p>66 ÷ 33 = 2</p>
@@ -39,9 +46,10 @@
                 </div>
             </div>
     </div>
-
+<!-- footer at the bottom with quick nav links -->
 <footer class="footer">
     <p>2026 Math Learning game | Made by Joe Shikagishi</p>
+    <!-- quick navigation links in the footer -->
     <div class="footerlinks">
         <a href="/home">Home</a>
         <a href="/learn">Learning Math</a>

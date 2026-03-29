@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- links the external CSS stylesheet to this page -->
         <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
         <title>Math Masters | Learn Multiplication</title>
     </head>
 <body>  
+    <!-- fixed navbar at the top of the page -->
     <div class="menu-bar">
+        <!-- clicking the logo takes the user back to the homepage -->
         <a href="/home" class="menu-logo">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2MKA6HWT8Qk-hn5AzfdHMYnVDRCwlukys5Q&s" alt="Logo" class="navbarlogo">
         </a>
+        <!-- container for the nav links centered in the navbar -->
         <div class="navbarlinks">
             <a href="/home">Home</a>
             <a href="/learn">Learning Math</a>
@@ -16,32 +20,36 @@
             <a href="/logout">Log Out</a>
         </div>
     </div>
-
+    <!-- main content area pushed below the fixed navbar -->
     <div class="learningcontent">
-            <a href="/learn" class="learning-back-button">← Back to Learning</a>
-
-            <div class="learningcontent-card">
-                <h1 class="learningcontent-title">Multiplication (×)</h1>
-                <p class="learningcontent-description">
-                    Multiplication is where you take one number and add it to itself a certain number of times
-                    <br>
-                    <br>
-                    For example, you and your 3 bestfriends decided to buy 3 cars each. If 4 people gets 3 cars each, that is 3 + 3 + 3 + 3 cars.
-                    <br>
-                    <br>
-                    However, we can express this as: <strong>4 × 3 = 12</strong>
-                </p>
-
-                <div class="learning-example">
-                    <h3>Example:</h3>
-                    <p>12 × 3 = 36</p>
-                    <p>9 × 3 = 27</p>
-                </div>
+        <!-- back button to return to the learning topic selection page -->
+        <a href="/learn" class="learning-back-button">← Back to Learning</a>
+        <!-- card container holding the topic title, description and examples -->
+        <div class="learningcontent-card">
+            <h1 class="learningcontent-title">Multiplication (×)</h1>
+            <!-- this paragraph explains what multiplication is with a real life example -->
+            <p class="learningcontent-description">
+                Multiplication is where you take one number and add it to itself a certain number of times
+                <br>
+                <br>
+                For example, you and your 3 bestfriends decided to buy 3 cars each. If 4 people gets 3 cars each, that is 3 + 3 + 3 + 3 cars.
+                <br>
+                <br>
+                <!-- bold text to highlight the mathematical expression -->
+                However, we can express this as: <strong>4 × 3 = 12</strong>
+            </p>
+            <!-- box showing worked examples of multiplication problems -->
+            <div class="learning-example">
+                <h3>Example:</h3>
+                <p>12 × 3 = 36</p>
+                <p>9 × 3 = 27</p>
             </div>
+        </div>
     </div>
-
+<!-- footer with copyright info and quick nav links -->
 <footer class="footer">
     <p>2026 Math Learning game | Made by Joe Shikagishi</p>
+    <!-- quick navigation links in the footer -->
     <div class="footerlinks">
         <a href="/home">Home</a>
         <a href="/learn">Learning Math</a>
