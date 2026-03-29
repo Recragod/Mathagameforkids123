@@ -25,35 +25,19 @@
             <div class="gamecontent">
                 <h2 class="gamemode">Timeattack Mode</h2>
                 <h1>Game Over!</h1>
-                <p class="score">Final Score: {{ score }} / 10</p>
+                <p class="score">Final Score: {{ score }} </p>
                 <a href="/practice/easy" class="submit-btn">Play Again</a>
             </div>
 
         {% else %}
-            <!-- game in progress -->
             <div class="gamecontent">
-                 <h2 class="gamemode">Timeattack Mode</h2>
+                <h2 class="gamemode">Timeattack Mode</h2>
                 <p class="game-progress">Question {{ question_number }}</p>
 
                 <div class="row">
-                    <span id="Timer" class="timer timerfront">60</span>
+                    <span id="Timer" class="timer">{{ time_left }}</span>
                     <span class="seconds">Seconds</span>
-                </div>
-
-                <script>
-                    var count = 6000;
-                    var counter = setInterval(timer, 10);
-
-                    function timer() {
-                    if (count <= 0) {
-                        clearInterval(counter);
-                        return;
-                    }
-                    count--;
-                   
-                    document.getElementById("Timer").innerHTML = Math.floor(count / 100);
-                    }
-                </script>
+                 </div>
 
                 <h1 class="questions">{{ question }}</h1>
 
@@ -61,14 +45,33 @@
                     <p class="result {{ feedback_type }}">{{ feedback }}</p>
                 {% endif %}
 
-                <form method="POST" action="/practice/timeattack">
-                    <input class="gameinput" type="number" name="answer" placeholder="Your answer" required autofocus>
+                <form id="timeattack-form" method="POST" action="/practice/timeattack">
+                    <input type="hidden" name="timeout" value="false" id="timeout-input">
+                    <input class="gameinput" type="number" name="answer" placeholder="Your answer" autofocus>
                     <br><br>
                     <button class="submit-btn" type="submit">Submit</button>
                 </form>
 
                 <p class="score">Score: {{ score }}</p>
             </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    let timeLeft = {{ time_left }};
+                    const timerDisplay = document.getElementById("Timer");
+
+                    const countdown = setInterval(function() {
+                        timeLeft--;
+                        timerDisplay.textContent = timeLeft;
+
+                        if (timeLeft <= 0) {
+                            clearInterval(countdown);
+                            document.getElementById("timeout-input").value = "true";
+                            document.getElementById("timeattack-form").submit();
+                        }
+                    }, 1000);
+                });
+            </script>
         {% endif %}
 
         </div>

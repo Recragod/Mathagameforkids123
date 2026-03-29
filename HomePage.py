@@ -179,6 +179,8 @@ def generate_medium_question():
         mediumnum2 = random.randint(1, 9)
         mediumnum1 = mediumnum2 * random.randint(1, 9)
 
+    if mediumoperation == "-" and mediumnum2 > mediumnum1: mediumnum1, mediumnum2 = mediumnum2, mediumnum1
+
     question = f"{mediumnum1} {mediumoperation} {mediumnum2}"
     answer = int(eval(question))
     return question, answer
@@ -373,26 +375,42 @@ def practice_hard():
     
 @app.route("/practice/timeattack", methods=["GET", "POST"])
 def practice_timeattack():
-    # reset game when user first visits the page
     if request.method == "GET":
         session["timeattack_score"] = 0
         session["timeattack_question_number"] = 1
+        session["timeattack_start"] = __import__('time').time()  # store start time
         question, answer = generate_timeattack_question()
         session["timeattack_answer"] = answer
         return render_template("timeattack.html",
             question=question,
             question_number=1,
             score=0,
-            feedback=None)
+            feedback=None,
+            time_left=60)
 
-    # handle answer when user submits
     if request.method == "POST":
+        import time
+
+        # check if timer has run out
+        start_time = session.get("timeattack_start", time.time())
+        elapsed = time.time() - start_time
+        time_left = max(0, int(60 - elapsed))
+
+        # if timeout form submitted or time is up
+        if request.form.get("timeout") == "true" or time_left <= 0:
+            score = session.get("timeattack_score", 0)
+            return render_template("timeattack.html",
+                question=None,
+                question_number=0,
+                score=score,
+                feedback=None,
+                time_left=0)
+
         user_answer = int(request.form["answer"])
         correct_answer = session.get("timeattack_answer")
         score = session.get("timeattack_score", 0)
         question_number = session.get("timeattack_question_number", 1)
 
-        # check if answer is correct and update score
         if user_answer == correct_answer:
             score += 1
             feedback = "Correct!"
@@ -405,24 +423,16 @@ def practice_timeattack():
         question_number += 1
         session["timeattack_question_number"] = question_number
 
-        # if all 20 questions are done, show game over screen
-        if Timer == 0:
-            return render_template("timeattack.html",
-                question=None,
-                question_number=20,
-                score=score,
-                feedback=None)
-
-        # generate next question
-        question, timeattackanswer = generate_timeattack_question()
-        session["timeattack_answer"] = timeattackanswer
+        question, answer = generate_timeattack_question()
+        session["timeattack_answer"] = answer
 
         return render_template("timeattack.html",
             question=question,
             question_number=question_number,
             score=score,
             feedback=feedback,
-            feedback_type=feedback_type)
+            feedback_type=feedback_type,
+            time_left=time_left)
     
 #This makes sure that the program runs only when this file is executed directly
 if __name__ == "__main__":

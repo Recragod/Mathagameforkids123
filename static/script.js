@@ -7,7 +7,7 @@ console.log("Login page loaded");
 //---------------------------------------------------------------
 function openSignupWindow()
 {
-    window.open('/signup', 'Singup', 'width=400,height=400,top=200,left=500');
+    window.open('/signup', 'Signup', 'width=400,height=400,top=200,left=500');
 }
 
 
@@ -22,5 +22,5 @@ function openSignupWindow()
             return;
          }
          count--;
-         document.getElementById("Timer").innerHTML=count /100.toFixed(2);
+         document.getElementById("Timer").innerHTML = (count / 100).toFixed(2);
      }
