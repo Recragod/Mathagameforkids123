@@ -1,16 +1,13 @@
 #Programmer name: Joe Shikagishi
 
-#libraries
-import sqlite3
+import sqlite3 #libraries
 
-#Connect to the database (creates users.db if it doesn't)
-conn = sqlite3.connect("users.db")
+conn = sqlite3.connect("users.db") #Connect to the database (creates users.db if it doesn't)
 
-#Cursor alows us to execute SQL commands
-cursor = conn.cursor()
+cursor = conn.cursor() #Cursor alows us to execute SQL commands
 
 #Create a table called "users"
-cursor.execute("""
+cursor.execute(""" 
 CREATE TABLE IF NOT EXISTS users (
 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -18,7 +15,7 @@ CREATE TABLE IF NOT EXISTS users (
     password TEXT NOT NULL
                
 )
-""")
+""") 
 
 #Insert a test user for login testing
 cursor.execute("""
@@ -26,11 +23,8 @@ INSERT INTO users (username, password)
 VALUES ('admin', '1234')
 """)
 
-#Save the changes
-conn.commit()
+conn.commit() #Save the changes
 
-#Close database connection
-conn.close()
+conn.close() #Close database connection
 
-#lines prints in your terminal
-print("Database created successfully")
+print("Database created successfully") #lines prints in your terminal

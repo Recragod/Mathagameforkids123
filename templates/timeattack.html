@@ -1,61 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- links the external CSS stylesheet to this page -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
-        <title>Math Masters | Practice (Timeattack)</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}"> <!-- links the external CSS stylesheet to this page -->
+        <title>Math Masters | Practice (Timeattack)</title> <!-- creates a title for the HTML page -->
     </head>
 <body>  
-    <!-- fixed navbar at the top of the page -->
-    <div class="menu-bar">
-        <!-- clicking the logo takes the user back to the homepage -->
-        <a href="/home" class="menu-logo">
+    <div class="menu-bar"> <!-- fixed navbar at the top of the page -->
+        <a href="/home" class="menu-logo">  <!-- clicking the logo takes the user back to the homepage -->
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2MKA6HWT8Qk-hn5AzfdHMYnVDRCwlukys5Q&s" alt="Logo" class="navbarlogo">
         </a>
-        <!-- container for the nav links centered in the navbar -->
-        <div class="navbarlinks">
-            <a href="/home">Home</a>
-            <a href="/learn">Learning Math</a>
-            <a href="/practice">Practice</a>
-            <a href="/logout">Log Out</a>
+        <div class="navbarlinks">       <!-- container for the nav links centered in the navbar -->
+            <a href="/home">Home</a> <!-- creates a link to the home page -->
+            <a href="/learn">Learning Math</a> <!-- creates a link to the learn page -->
+            <a href="/practice">Practice</a> <!-- creates a link to the practice page -->
+            <a href="/logout">Log Out</a> <!-- creates a link to the login -->
         </div>
     </div>
-    <!-- main game page container -->
-    <div class="gamepage">
-        <!-- back button to return to the practice mode selection page -->
-        <a href="/practice" class="practice-back-button">← Back to Practice</a>
-        <!-- checks if question is None meaning the timer has run out -->
-        {% if question == None %}
-            <!-- game over screen -->
-            <div class="gamecontent">
-                <h2 class="gamemode">Timeattack Mode</h2>
+    <div class="gamepage"> <!-- main game page container -->
+        <a href="/practice" class="practice-back-button">← Back to Practice</a> <!-- back button to return to the practice mode selection page -->
+        {% if question == None %} <!-- checks if question is None meaning the timer has run out -->
+            <div class="gamecontent"> <!-- game over screen -->
+                <h2 class="gamemode">Timeattack Mode</h2> 
                 <h1>Game Over!</h1>
-                <!-- displays the final score -->
-                <p class="score">Final Score: {{ score }} </p>
-                <!-- button to restart the time attack game -->
-                <a href="/practice/easy" class="submit-btn">Play Again</a>
+                <p class="score">Final Score: {{ score }} </p> <!-- displays the final score -->
+                <a href="/practice/easy" class="submit-btn">Play Again</a> <!-- button to restart the time attack game -->
             </div>
 
-        {% else %}
-        <!-- game in progress screen shown while timer is still running -->
+        {% else %} <!-- game in progress screen shown while timer is still running -->
             <div class="gamecontent">
                 <h2 class="gamemode">Timeattack Mode</h2>
-                <!-- shows the current question number -->
-                <p class="game-progress">Question {{ question_number }}</p>
+                <p class="game-progress">Question {{ question_number }}</p> <!-- shows the current question number -->
                 
-                <!-- timer display showing seconds remaining -->
-                <div class="row">
-                    <!-- timer value is passed from Flask and counts down using JavaScript -->
-                    <span id="Timer" class="timer">{{ time_left }}</span>
-                    <span class="seconds">Seconds</span>
+                <div class="row"> <!-- timer display showing seconds remaining -->
+                    <span id="Timer" class="timer">{{ time_left }}</span> <!-- timer value is passed from Flask and counts down using JavaScript -->
+                    <span class="seconds">Seconds</span> <!-- shows the text 'seconds' -->
                  </div>
-                <!-- displays the randomly generated math question -->  
-                <h1 class="questions">{{ question }}</h1>
-                <!-- only shows feedback if an answer has been submitted -->
-                {% if feedback %}
+                <h1 class="questions">{{ question }}</h1> <!-- displays the randomly generated math question -->  
+                {% if feedback %} <!-- only shows feedback if an answer has been submitted -->
                     <p class="result {{ feedback_type }}">{{ feedback }}</p>
-                {% endif %}
-                <!-- form that submits the user's answer to the Flask route -->
+                {% endif %} <!-- form that submits the user's answer to the Flask route -->
                 <form id="timeattack-form" method="POST" action="/practice/timeattack">
                     <input type="hidden" name="timeout" value="false" id="timeout-input"> <!-- hidden input used to tell Flask the timer has expired -->
                     <input class="gameinput" type="number" name="answer" placeholder="Your answer" autofocus> <!-- number input for the user to type their answer -->
