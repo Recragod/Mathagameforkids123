@@ -1,456 +1,456 @@
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #D2E0DB;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Sets the primary font */
+    background-color: #D2E0DB; /* Sets the page background color */
+    justify-content: center; /* Centers flex items horizontally */
+    align-items: center; /* Centers flex items vertically */
+    margin: 0; /* Removes default browser outer spacing */
+    padding: 0px; /* Removes default browser inner spacing */
+    display: flex; /* flexbox layout for the body */
+    flex-direction: column; /* Stacks elements vertically */
+    min-height: 100vh; /* Ensures body is tall as the browser window */
 }
 
  .login-box {   
-    width:300px;
-    margin:100px auto;
-    padding:20px;
-    border:2px solid #333;
-    background-color: #f9f9f9c2;
-    text-align:center;
-    border-radius: 20px;
+    width:300px; /* sets the width of the login container */
+    margin:100px auto; /* Adds top/bottom space and centers it horizontally */
+    padding:20px; /* Adds 20px of padding inside the box borders */
+    border:2px solid #333; /* Adds a 2px thick, dark gray thin border */
+    background-color: #f9f9f9c2; /*changes the  background coolour */
+    text-align:center; /* Aligns text and inline elements to the middle */
+    border-radius: 20px; /* Rounds the corners of the border */
 }
 
 .login-input {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 8px;
+    width: 90%; /* Makes input fill 90%  of its container's width */
+    padding: 10px; /* Adds 10px of padding inside the box borders */
+    margin: 10px 0; /* Adds 10px vertical spacing between inputs */
+    border-radius: 8px; /* Rounds the corners of the border */
 }
 
 .login-button {
-    padding: 10px 30px;
-    cursor: pointer;
-    border-radius: 7px;
-    background-color: #314889;
-    color: rgba(255, 255, 255, 0.856);
-    transition: background-color 0.2s;    
+    padding: 10px 30px; /* Sets the height and width of the button */
+    cursor: pointer; /* Changes mouse to a hand icon when hovering */
+    border-radius: 7px; /* Rounds the corners of the border */
+    background-color: #314889; /*changes the background colour */
+    color: rgba(255, 255, 255, 0.856);  /* sets the color of the text */
+    transition: background-color 0.2s; /* adds a 0.2 second transition when it transforms */
 }
 
 .login-button:hover {
-    background-color: rgba(255, 255, 255, 0.856);
-    color: #314889;
+    background-color: rgba(255, 255, 255, 0.856); /*changes the background colour */
+    color: #314889; /* sets the color of the text */
 }
 
 .signup-btn {
-    background-color: rgb(0, 179, 0);
-    color: rgb(0, 0, 0);
-    border: none;
-    margin-top: 5px;
-    padding: 10px 24px;
-    cursor: pointer;
-    border-radius: 7px;
-    transition: background-color 0.2s;
+    background-color: rgb(0, 179, 0); /*changes the background colour */
+    color: rgb(0, 0, 0); /* sets the color of the text */
+    border: none; /* removes border */
+    margin-top: 5px; /* adds a top margin */
+    padding: 10px 24px; /* Sets the height and width */
+    cursor: pointer; /* Changes mouse to a hand icon when hovering */
+    border-radius: 7px; /* Rounds the corners of the border */
+    transition: background-color 0.2s; /* adds a 0.2 second transition when it transforms */
 }
 
 .signup-btn:hover {
-    background-color:  rgba(0, 179, 0, 0.473);
-    color:rgb(0, 0, 0);
+    background-color:  rgba(0, 179, 0, 0.473); /*changes the background colour */
+    color:rgb(0, 0, 0); /* sets the color of the text */
 }
 
 .error-message {
-    color:rgb(209, 0, 0);
-    font-size: 14px;
-    margin-bottom: 10px;
+    color:rgb(209, 0, 0); /* sets the color of the text */
+    font-size: 14px; /* sets specific font size */
+    margin-bottom: 10px; /* adds a bottom margin */
 }
 
 .menu-bar {   
-    background-color: #262a49;
-    padding: 15px;
-    display: flex;
-    position: fixed;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    align-items: center;
+    background-color: #262a49; /*changes the background colour */
+    padding: 15px; /* Adds padding inside the box borders */
+    display: flex; /* flexbox layout for the body */
+    position: fixed; /* keeps the position fixed */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sets the primary font */
+    top: 0%; /* Pins bar to the very top */
+    left: 0%; /* Pins bar to the very left */
+    width: 100%; /* Makes bar span the full width */
+    align-items: center; /* Vertically aligns nav items */
     justify-content: space-between; /* this centers the links horizontally */
     box-sizing: border-box;  /* this prevents width overflow from padding */
     z-index: 100;   /*ensure that the navbar is above everything */
 }
 
 .menu-bar .navbarlinks a {
-    color:#ffffff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
+    color:#ffffff; /* sets the color of the text */
+    text-decoration: none; /* remove default text decoration such as underlining */
+    font-size: 18px;  /* sets specific font size */
+    font-weight: bold; /* makes the text bolder */
 }
 
 .menu-bar .navbarlinks a:hover {
-    color: rgb(174, 174, 174);
+    color: rgb(174, 174, 174); /* sets the color of the text */
 }
 
 .herobanner { 
-    background: linear-gradient(135deg, #1a3a4a 0%, #0d2233 60%, #1a4a3a 100%);
-    width: 100%;
-    margin-top: 84px;
-    padding: 80px 80px;
-    text-align: left;        
-    box-sizing: border-box;
-    display: flex;           /* puts text on left, and the hero image on right */
-    align-items: center;
-    justify-content: space-between;
-    min-height: 400px;       /* makes the hero banner taller */
+    background: linear-gradient(135deg, #1a3a4a 0%, #0d2233 60%, #1a4a3a 100%); /* Diagonal color blend */
+    width: 100%; /* Spans full page width */
+    margin-top: 84px; /* adds a top margin */
+    padding: 80px 80px; /* Sets the height and width of the button */
+    text-align: left; /* Aligns content to the left */
+    box-sizing: border-box; /* Ensures padding doesn't break the width */
+    display: flex; /* puts text on left, and the hero image on right */
+    align-items: center; /* Centers content vertically */
+    justify-content: space-between; /* Pushes text to left and image to right */
+    min-height: 400px; /* makes the hero banner taller */
 }
 
 .bannertextbox {
-    max-width: 55%;
+    max-width: 55%; /* Limits text width so it doesn't hit the image */
 }
 
 .bannerimage {  /* logo image inside hero banner*/
-    width: 280px;
-    border-radius: 12px;
+    width: 280px; /* sets a specific width */
+    border-radius: 12px; /* Rounds the corners of the border */
 }
 
 .bannerwelcometitle {
-    color: rgb(255, 255, 255);
-    font-size: 38px;
-    font-weight: 800;
-    margin: 0 0 15px 0;
+    color: rgb(255, 255, 255); /* sets the color of the text */
+    font-size: 38px;  /* sets specific font size */
+    font-weight: 800; /* makes the text bolder */
+    margin: 0 0 15px 0; /* sets specific margins for the title */
 }
 
 .bannertitle {  /* big title text on the hero banner*/
-    color: rgb(255, 255, 255);
-    font-size: 23px;
-    font-weight: 500;
-    margin: 0 0 15px 0;
+    color: rgb(255, 255, 255); /* sets the color of the text */
+    font-size: 23px;  /* sets specific font size */
+    font-weight: 500; /* makes the text bolder */
+    margin: 0 0 15px 0; /* sets specific margins for the title */
 }
 
 .bannerdescription {   /* description text on the hero banner */
-    color: rgb(200, 200, 200);
-    font-size: 18px;
-    margin: 0 0 30px 0;
+    color: rgb(200, 200, 200); /* sets the color of the text */
+    font-size: 18px;  /* sets specific font size */
+    margin: 0 0 30px 0; /* sets specific margins for the description */
 }
 
 .Getstartedbutton { /* get started button on the hero banner */
-    background-color: rgb(66, 219, 185);
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 14px 35px;
-    border-radius: 8px;
-    display: inline-block;
+    background-color: rgb(66, 219, 185); /*changes the background colour */
+    color: rgb(0, 0, 0); /* sets the color of the text */
+    text-decoration: none;  /* remove default text decoration such as underlining */
+    font-size: 18px;  /* sets specific font size */
+    font-weight: bold; /* makes the text bolder */
+    padding: 14px 35px; /* Sets the height and width of the button */
+    border-radius: 8px; /* Rounds the corners of the border */
+    display: inline-block; /* Allows padding and width on a link */
 }
 
 .Getstartedbutton:hover { /*effect when hovering above the button*/
-    background-color: rgb(45, 180, 150);
+    background-color: rgb(45, 180, 150); /*changes the background colour */
 }
 
 .navbarlogo {
-    width: 50px;             
-    height: 50px;
-    object-fit: cover;     
-    border-radius: 8px;
-    margin-left: 15px; 
+    width: 50px; /* sets the width of the logo to 50px */
+    height: 50px; /* sets the height of the logo to 50px */
+    object-fit: cover; /* Prevents image distortion */
+    border-radius: 8px; /* Rounds the corners of the border */
+    margin-left: 15px; /* adds a 15px space on the left */
 }
 
 .navbarlinks {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    position: absolute;     
-    left: 50%;              
+    display: flex; /* flexbox layout for the body */
+    gap: 40px; /* Adds a 40px space between each individual link */
+    align-items: center; /* Centers content vertically */
+    position: absolute; /* Allows manual positioning relative to bar */
+    left: 50%; /* Starts the group at the center point */              
     transform: translateX(-50%);  /* shifts it back by half its own width */
 }
 
 .learn-page {
-    margin-top: 100px;
-    text-align: center;
-    padding: 40px;
+    margin-top: 100px; /* adds a top margin */
+    text-align: center;  /* Center aligns text inside */
+    padding: 40px; /* Adds padding inside the box borders */
 }
 
 .learnpagetitle {
-    font-size: 36px;
-    color: #12263A;
-    margin-bottom: 10px;
+    font-size: 36px;  /* sets specific font size */
+    color: #12263A; /* sets the color of the text */
+    margin-bottom: 10px; /* adds a bottom margin */
 }
 
 .learnpagesubtitle {
-    font-size: 18px;
-    color: #2c203b;
-    margin-bottom: 40px;
-    font-weight: 600;
+    font-size: 18px;  /* sets specific font size */
+    color: #2c203b; /* sets the color of the text */
+    margin-bottom: 40px; /* adds a bottom margin */
+    font-weight: 600; /* makes the text bolder */
 }
 
 .learngrid {
-    display: grid;
+    display: grid; /* Enables CSS Grid */
     grid-template-columns: repeat(2,1fr); /* adds 2 buttons per row*/
-    gap: 30px;
-    max-width: 700px;
-    margin: 0 auto;
+    gap: 30px; /* Space between grid items */
+    max-width: 700px; /* Limits the total width of the grid to 700px */
+    margin: 0 auto; /* No default margin */
 }
 
 .learnbutton {
-    background-color: #49518b;
-    color: white;
-    border-radius: 16px;
-    padding: 10px;
-    transition: background-color 0.2s;
-    text-decoration: none;
+    background-color: #49518b; /*changes the background colour */
+    color: white; /* sets the color of the text */
+    border-radius: 16px; /* Rounds the corners of the border */
+    padding: 10px; /* Adds padding inside the box borders */
+    transition: background-color 0.2s; /* adds a 0.2 second transition when it transforms */
+    text-decoration: none;  /* remove default text decoration such as underlining */
 }
 
 .learnbutton:hover {
-    background-color: #42DBB9;
-    color: #000;
+    background-color: #42DBB9; /*changes the background colour */
+    color: #000; /* sets the color of the text */
 }
 
 .learn-icon {
-    font-size: 34px;
+    font-size: 34px;  /* sets specific font size */
 }
 
 .learningcontent {
-    padding: 40px;
-    padding-top: 110px;
-    max-width: 800px;
-    width: 100%;
-    flex: 1;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 40px; /* Adds padding inside the box borders */
+    padding-top: 110px; /* Extra top space for the nav bar */
+    max-width: 800px; /* Limits the total width of the grid to 800px */
+    width: 100%; /* Spans full page width */
+    flex: 1; /* Allows it to grow to fill available space */
+    margin-left: auto; /* Centers container */
+    margin-right: auto; /* Centers container */
 }
 
 .learning-back-button {
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bolder;
-    text-decoration: none;
-    color: #262a49;
-    margin-bottom: 25px;
+    display: inline-block; /* Allows padding and width on a link */
+    font-size: 18px;  /* sets specific font size */
+    font-weight: bolder; /* makes the text bolder */
+    text-decoration: none;  /* remove default text decoration such as underlining */
+    color: #262a49; /* sets the color of the text */
+    margin-bottom: 25px; /* adds a bottom margin */
 }
 
 .learning-back-button:hover {
-    color: #42DBB9
+    color: #42DBB9 /* sets the color of the text */
 }
 
 .learningcontent-card {
-    background-color: #98acb195;
-    border-radius: 16px;
-    padding: 50px;
-    color: rgb(0, 0, 0);
+    background-color: #98acb195; /*changes the background colour */
+    border-radius: 16px; /* Rounds the corners of the border */
+    padding: 50px; /* Adds padding inside the box borders */
+    color: rgb(0, 0, 0); /* sets the color of the text */
 }
 
 .learningcontent-title {
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 30px;  /* sets specific font size */
+    margin-bottom: 20px; /* adds a bottom margin */
 }
 
 .learningcontent-description {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #262a49;
-    margin-bottom: 30px;
+    font-size: 16px;  /* sets specific font size */
+    line-height: 1.5; /* Adds space between lines for readability */
+    color: #262a49; /* sets the color of the text */
+    margin-bottom: 30px; /* adds a bottom margin */
 }
 
 .learning-example {
-    background-color: rgba(255, 255, 255, 0.429);
-    border-radius: 20px;
-    padding: 20px 30px;
-    font-size: 18px;
-    color: #384057;
+    background-color: rgba(255, 255, 255, 0.429); /*changes the background colour */
+    border-radius: 20px; /* Rounds the corners of the border */
+    padding: 20px 30px; /* Sets the height and width of the button */
+    font-size: 18px;  /* sets specific font size */
+    color: #384057; /* sets the color of the text */
 }
 
 .footer {
-    background-color: #262a49;
-    color: rgb(180, 180, 180);
-    text-align: center;
-    padding: 30px;
-    font-size: 14px;
-    width: 100%;
-    margin-top: auto;
-    box-sizing: border-box;
-    justify-content: space-between;
-    display: flex; 
+    background-color: #262a49; /*changes the background colour */
+    color: rgb(180, 180, 180); /* sets the color of the text */
+    text-align: center; /* Center aligns text inside */
+    padding: 30px; /* adds a 30px padding */
+    font-size: 14px; /* Adds padding inside the box borders */
+    width: 100%; /* Spans full page width */
+    margin-top: auto; /* adds an automatic top margin */
+    box-sizing: border-box; /* Includes padding */
+    justify-content: space-between; /* Spreads out footer items */
+    display: flex;  /* flexbox layout for the body */
 }
 
 .footer p {
-    margin: 0;
+    margin: 0; /* No default margin */
 }
 
 
 .footerlinks {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 10px;
+    display: flex; /* flexbox layout for the body */
+    justify-content: center; /* Centers the links group */
+    gap: 40px; /* Space between each link */
+    margin-bottom: 10px; /* adds a bottom margin */
 }
 
 .footerlinks a {
-    color: #59647b;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
+    color: #59647b; /* sets the color of the text */
+    text-decoration: none;  /* remove default text decoration such as underlining */
+    font-weight: bold; /* makes the text bolder */
+    font-size: 14px;  /* sets specific font size */
 }
 
 .footerlinks a:hover {
-    color: white;
+    color: white; /* sets the color of the text */
 }
 
 .practice-page {
     flex:1;
-    padding: 40px;
-    padding-top: 110px;
-    text-align: center;
+    padding: 40px; /* Adds padding inside the box borders */
+    padding-top: 110px; /* adds a 110px space on the top */
+    text-align: center; /* Center aligns text inside */
 }
 
 .practicetitle {
-    font-size: 36px;
-    color: #12263A;
-    margin-bottom: 10px;
+    font-size: 36px;  /* sets specific font size */
+    color: #12263A; /* sets the color of the text */
+    margin-bottom: 10px; /* adds a bottom margin */
 }
 
 .practicesubtitle {
-    font-size:18px;
-    color: #2c203b;
-    font-weight: 600;
-    margin-bottom: 40px;
+    font-size:18px;  /* sets specific font size */
+    color: #2c203b; /* sets the color of the text */
+    font-weight: 600; /* makes the text bolder */
+    margin-bottom: 40px; /* adds a bottom margin */
 }
 
 .practicecontent {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 auto;
-    max-width: 700px;
-    gap: 40px;
+    display: grid; /* Enables CSS Grid */
+    grid-template-columns: repeat(2, 1fr); /* adds 2 buttons per row*/
+    margin: 0 auto; /* No default margin */
+    max-width: 700px; /* Sets max width for the grid area to 700px */
+    gap: 40px; /* Space between grid items */
 }
 
 .practicecard {
-    border-radius: 16px;
-    text-decoration: none;
-    padding: 20px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    height: 200px; 
+    border-radius: 16px; /* Rounds the corners of the border */
+    text-decoration: none;  /* remove default text decoration such as underlining */
+    padding: 20px 20px; /* Sets the height and width of the button */
+    display: flex; /* flexbox layout for the body */
+    flex-direction: column; /* Vertical alignment */
+    align-items: center; /* Centers content vertically */
+    gap: 6px; /* Space between grid items */
+    height: 200px; /* Fixed height of 200px */
 }
 
 .practicecard:hover {
-    transform: scale(1.05);
-    transition: transform 0.2s;
+    transform: scale(1.05); /* grows in size by 5 percent on hover */
+    transition: transform 0.2s; /* adds a 0.2 second transition when it transforms */
 }
 
 .practicecard h2 {
-    margin: 0;
-    font-size: 24px;
-    text-decoration: none;
-    color: #000;
+    margin: 0; /* No default margin */
+    font-size: 24px;  /* sets specific font size */
+    text-decoration: none;  /* remove default text decoration such as underlining */
+    color: #000; /* sets the color of the text */
 }
 
 .practicecard p {
-    margin: 0;
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.85);
+    margin: 0; /* No default margin */
+    font-size: 14px;  /* sets specific font size */
+    color: rgba(0, 0, 0, 0.85); /* sets the color of the text */
 }
 
 .practice-icon {
-    font-size: 36px;
-    color: #000;
+    font-size: 36px;  /* sets specific font size */
+    color: #000; /* sets the color of the text */
 }
 
 .practicecard.timeattack {
-    margin-bottom: 70px;
+    margin-bottom: 70px; /* adds a bottom margin */
 }
 
-.easy       { background-color: #417549; }
-.medium     { background-color: #b48924; }
-.hard       { background-color: #922e2e; }
-.timeattack { background-color: #214a88; }
+.easy       { background-color: #417549; } /*changes the background colour */
+.medium     { background-color: #b48924; } /*changes the background colour */
+.hard       { background-color: #922e2e; } /*changes the background colour */
+.timeattack { background-color: #214a88; } /*changes the background colour */
 
 .gamepage {
-    padding: 40px;
-    padding-top: 110px;
-    flex: 1;
-    max-width: 600px;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 40px; /* Adds padding inside the box borders */
+    padding-top: 110px; /* adds a 110px padding on the top */
+    flex: 1; /* Allows it to grow to fill available space */
+    max-width: 600px; /* Limits the total width of the grid to 600px */
+    margin: 0 auto; /* No default margin */
+    width: 100%; /* Spans full page width */
+    box-sizing: border-box; /* this prevents width overflow from padding */
 }
 
 .gamecontent {
-    background-color: #262a49;
-    border-radius: 16px;
-    padding: 40px;
+    background-color: #262a49; /*changes the background colour */
+    border-radius: 16px; /* Rounds the corners of the border */
+    padding: 40px; /* Adds padding inside the box borders */
 }
 
 .gamecontent h1{
-    color: white;
+    color: white; /* sets the color of the text */
 }
 
 .gamemode {
-    color: white;
+    color: white; /* sets the color of the text */
 }
 
 .game-progress {
-    color: white;
+    color: white; /* sets the color of the text */
 }
 
 .score {
-    color: white;
+    color: white; /* sets the color of the text */
 }
 
 .questions {
-    color: white;
+    color: white; /* sets the color of the text */
 }
 
 .result {
-    color: white;
+    color: white; /* sets the color of the text */
 }
 
-.correct { color: #42DBB9; }
+.correct { color: #42DBB9; } /* sets the color of the text */
 
-.incorrect {color: red}
+.incorrect {color: red} /* sets the color of the text */
 
 .submit-btn {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 8px;
     padding-bottom: 8px;
-    border-radius: 7px;
-    cursor: pointer;
-    display: inline-block;
-    background-color: white;
-    text-decoration: none;
-    color: #000;
+    border-radius: 7px; /* Rounds the corners of the border */
+    cursor: pointer; /* Changes mouse to a hand icon when hovering */
+    display: inline-block; /* Allows padding and width on a link */
+    background-color: white; /*changes the background colour */
+    text-decoration: none;  /* remove default text decoration such as underlining */
+    color: #000; /* sets the color of the text */
 }
 
 .gameinput {
-    padding:10px;
-    border-radius: 8px;
-    width: 200px;
-    text-align: center;
+    padding:10px; /* Adds padding inside the box borders */
+    border-radius: 8px; /* Rounds the corners of the border */
+    width: 200px; /* sets width to 200px */
+    text-align: center; /* Center aligns text inside */
 }
 
 .practice-back-button {
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bolder;
-    text-decoration: none;
-    color: #262a49;
-    margin-bottom: 25px;
+    display: inline-block; /* Allows padding and width on a link */
+    font-size: 18px; /* sets specific font size */
+    font-weight: bolder; /* makes the text bolder */
+    text-decoration: none;  /* remove default text decoration such as underlining */
+    color: #262a49; /* sets the color of the text */
+    margin-bottom: 25px; /* adds a bottom margin */
 }
 
 .practice-back-button:hover {
-    color: #42DBB9
+    color: #42DBB9 /* sets the color of the text */
 }
 
 .timer {
-    color: #ffffff;
-    font-size: 34px;
-    font-weight: bold;
+    color: #ffffff; /* sets the color of the text */
+    font-size: 34px;  /* sets specific font size */
+    font-weight: bold; /* makes the text bolder */
 }
 
 .seconds {
-    color: white;
-    font-size: 18px;
-    margin-left: 10px;
+    color: white; /* sets the color of the text */
+    font-size: 18px;  /* sets specific font size */
+    margin-left: 10px; /* adds a 10px space on the left */
 }

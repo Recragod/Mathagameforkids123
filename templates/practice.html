@@ -1,69 +1,58 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- links the external CSS stylesheet to this page -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
-        <title>Math Masters | Practice</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}"> <!-- links the external CSS stylesheet to this page -->
+        <title>Math Masters | Practice</title>  <!-- creates a title for the HTML page -->
     </head>
     <body>
-        <!-- fixed navbar at the top of the page -->
-        <div class="menu-bar">
-            <!-- clicking the logo takes the user back to the homepage -->
-            <a href="/home" class="menu-logo">
+        <div class="menu-bar"> <!-- fixed navbar at the top of the page -->
+            <a href="/home" class="menu-logo"> <!-- clicking the logo takes the user back to the homepage -->
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2MKA6HWT8Qk-hn5AzfdHMYnVDRCwlukys5Q&s" alt="Logo" class="navbarlogo">
             </a>
-            <!-- container for the nav links centered in the navbar -->
-            <div class="navbarlinks">
-                <a href="/home">Home</a>
-                <a href="/learn">Learning Math</a>
-                <a href="/practice">Practice</a>
-                <a href="/logout">Log Out</a>
+            <div class="navbarlinks"> <!-- container for the nav links centered in the navbar -->
+                <a href="/home">Home</a> <!-- creates a link to the homepage -->
+                <a href="/learn">Learning Math</a> <!-- creates a link to the learning math page -->
+                <a href="/practice">Practice</a> <!-- creates a link to the practice page -->
+                <a href="/logout">Log Out</a> <!-- creates a link to the login page -->
             </div>
         </div>
-        <!-- page title and subtitle section -->
-        <div class="practice-page">
-            <h1 class="practicetitle">Practice Mode</h1>
-            <p class="practicesubtitle">Choose a difficulty to get started</p>
+        <div class="practice-page"> <!-- page title and subtitle section -->
+            <h1 class="practicetitle">Practice Mode</h1> <!-- creates a title called Pratice mode-->
+            <p class="practicesubtitle">Choose a difficulty to get started</p> <!-- adds a subtitle -->
         </div>
-        <!-- 2x2 grid containing the four practice mode cards -->
-        <div class="practicecontent">
-            <!-- easy mode card -->
-            <a href="/practice/easy" class="practicecard easy">
+        <div class="practicecontent"> <!-- 2x2 grid containing the four practice mode cards -->
+            <a href="/practice/easy" class="practicecard easy"> <!-- easy mode card -->
                 <span class="practice-icon">☆</span>
-                <h2>Easy</h2>
-                <p>Contains: Addition & Subtraction</p>
-                <p>10 questions - 2 digit numberss</p>
+                <h2>Easy</h2> <!-- description of the easy mode game -->
+                <p>Contains: Addition & Subtraction</p> <!-- description of the easy mode game -->
+                <p>10 questions - 2 digit numberss</p> <!-- description of the easy mode game -->
             </a>
-            <!-- medium mode card -->
-            <a href="/practice/medium" class="practicecard medium">
-                <span class="practice-icon">☆ ☆</span>
-                <h2>Medium</h2>
-                <p>Contains: Addition, Subtraction, Multiplication, Division</p>
-                <p>15 questions - 2 digit numbers</p>
+            <a href="/practice/medium" class="practicecard medium"> <!-- medium mode card -->
+                <span class="practice-icon">☆ ☆</span> 
+                <h2>Medium</h2>  <!-- description of the medium mode game -->
+                <p>Contains: Addition, Subtraction, Multiplication, Division</p> <!-- description of the medium mode game -->
+                <p>15 questions - 2 digit numbers</p> <!-- description of the medium mode game -->
             </a>
-            <!-- hard mode card -->
-            <a href="/practice/hard" class="practicecard hard">
+            <a href="/practice/hard" class="practicecard hard"> <!-- hard mode card -->
                 <span class="practice-icon">☆ ☆ ☆</span>
-                <h2>Hard</h2>
-                <p>Contains: Addition, Subtraction, Multiplication, Division</p>
-                <p>20 questions - 3 digit numbers</p>
+                <h2>Hard</h2> <!-- description of the hard mode game -->
+                <p>Contains: Addition, Subtraction, Multiplication, Division</p> <!-- description of the hard mode game -->
+                <p>20 questions - 3 digit numbers</p> <!-- description of the hard mode game -->
             </a>
-            <!-- time attack card -->
-            <a href="/practice/timeattack" class="practicecard timeattack">
+            <a href="/practice/timeattack" class="practicecard timeattack"> <!-- time attack card -->
                 <span class="practice-icon">⏱</span>
-                <h2>Time Attack</h2>
-                <p>Contains: Addition, Subtraction, Multiplication, Division</p>
-                <p>1 minute timer</p>
+                <h2>Time Attack</h2> <!-- description of the time attack mode game -->
+                <p>Contains: Addition, Subtraction, Multiplication, Division</p> <!-- description of the time attack mode game -->
+                <p>1 minute timer</p> <!-- description of the time attack mode game -->
             </a>
         </div>
-    <!-- footer with quick nav links -->
-    <footer class="footer">
+
+    <footer class="footer"> <!-- footer with quick nav links -->
      <p>2026 Math Learning game | Made by Joe Shikagishi</p>
-        <!-- quick navigation links in the footer -->
-        <div class="footerlinks">
-            <a href="/home">Home</a>
-            <a href="/learn">Learning Math</a>
-            <a href="/practice">Practice</a>
+        <div class="footerlinks"> <!-- quick navigation links in the footer -->
+            <a href="/home">Home</a> <!-- creates a link to the homepage -->
+            <a href="/learn">Learning Math</a> <!-- creates a link to the learning math page -->
+            <a href="/practice">Practice</a> <!-- creates a link to the practice page -->
         </div>
     </footer>
 

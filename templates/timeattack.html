@@ -43,13 +43,13 @@
                     <input type="hidden" name="timeout" value="false" id="timeout-input"> <!-- hidden input used to tell Flask the timer has expired -->
                     <input class="gameinput" type="number" name="answer" placeholder="Your answer" autofocus> <!-- number input for the user to type their answer -->
                     <br><br>
-                    <button class="submit-btn" type="submit">Submit</button>
+                    <button class="submit-btn" type="submit">Submit</button> <!-- adds a submit button -->
                 </form>
-                <!-- shows the current score -->
-                <p class="score">Score: {{ score }}</p>
+    
+                <p class="score">Score: {{ score }}</p> <!-- shows the current score -->
             </div>
 
-            <script>
+            <script> // Javascript inside of Python
                 document.addEventListener("DOMContentLoaded", function() {
                     let timeLeft = {{ time_left }}; // starts the timer from whatever time_left Flask passes in
                     const timerDisplay = document.getElementById("Timer");
@@ -61,7 +61,7 @@
                         if (timeLeft <= 0) { // when timer hits 0, stop countdown and auto submit the form
                             clearInterval(countdown);
                             document.getElementById("timeout-input").value = "true"; // sets the hidden timeout input to true so Flask knows time ran out
-                            document.getElementById("timeattack-form").submit();
+                            document.getElementById("timeattack-form").submit(); // submits the time attack form
                         }
                     }, 1000);
                 });
@@ -70,15 +70,15 @@
 
         </div>
     </div>
-    <!-- footer with quick nav links -->
-    <footer class="footer">
+    
+    <footer class="footer"> <!-- footer with quick nav links -->
      <p>2026 Math Learning game | Made by Joe Shikagishi</p>
-        <!-- quick navigation links in the footer -->
-        <div class="footerlinks">
-            <a href="/home">Home</a>
-            <a href="/learn">Learning Math</a>
-            <a href="/practice">Practice</a>
+        <div class="footerlinks"> <!-- quick navigation links in the footer -->
+            <a href="/home">Home</a> <!-- creates a link to the homepage -->
+            <a href="/learn">Learning Math</a> <!-- creates a link to the learning math page -->
+            <a href="/practice">Practice</a> <!-- creates a link to the practice page -->
         </div>
     </footer>
+
 </body>
 </html>

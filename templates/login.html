@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <HTML>
     <head>
-        <!-- links the external CSS stylesheet to this page -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}"> <!-- links the external CSS stylesheet to this page -->
         <title>Math Masters | Login</title> <!-- Title to my webpage -->
     </head>
 
     <body>
-        <!--div class connects to style sheet: login-box-->
-        <div class="login-box">
-            <!-- main heading for my login page -->
-            <h2>Login Page</h2> 
-            <!-- creates a form for the user to login -->
-            <form method="POST" action="/login">
-
+        <div class="login-box"> <!--div class connects to style sheet: login-box-->
+            <h2>Login Page</h2>  <!-- main heading for my login page -->
+            <form method="POST" action="/login"> <!-- creates a form for the user to login -->
                 <!-- Creates text field for user to type in their username -->
-                <input class="login-input" type="text" name="username" placeholder="Username" required>
-                <br><br>
+                <input class="login-input" type="text" name="username" placeholder="Username" required> 
+                <br><br> <!-- creates a break in the text -->
                 <!-- Creates text field for user to type in their password -->
-                <input class="login-input" type="password" name="password" placeholder="Password" required>
+                <input class="login-input" type="password" name="password" placeholder="Password" required> 
                 <br><br>
-                <!--sends an error message if login fails-->
-                {% if error %}
-                    <p class="error-message">{{ error }}</p>
+                {% if error %} <!--sends an error message if login fails-->
+                    <p class="error-message">{{ error }}</p> <!-- shows the user that the username or password is invalid -->
                 {% endif %}
-                <!-- Creates a button to complete login-->
-                <button class="login-button" type="submit">Login</button>
+                <button class="login-button" type="submit">Login</button>  <!-- Creates a button to complete login-->
             </form>
-            <br>
-            <!--Sign Up button opens a popup-->
-            <button class="signup-btn" onclick="openSignupWindow()">Sign Up</button>
+            <br> <!-- creates a break in the text -->
+            <button class="signup-btn" onclick="openSignupWindow()">Sign Up</button> <!--Sign Up button opens a popup-->
         </div>
         <!-- links the JavaScript file which handles the signup popup -->
         <script src="{{ url_for('static', filename='script.js') }}"></script>
